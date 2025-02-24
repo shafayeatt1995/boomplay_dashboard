@@ -83,6 +83,11 @@ export default {
       callback: "/login",
     },
   },
+  axios: {
+    proxy: true,
+    baseURL: "/",
+    browserBaseURL: "/",
+  },
 
   router: {
     middleware: ["auth"],
