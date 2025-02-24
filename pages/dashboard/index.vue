@@ -1,5 +1,5 @@
 <template>
-  <div class="">Ami anik</div>
+  <div></div>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   head() {
     return { title: "Dashboard" };
   },
-  mounted() {
+  created() {
     this.$router.push({ name: "dashboard-boomplay" });
   },
 };
