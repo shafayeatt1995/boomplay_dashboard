@@ -13,6 +13,16 @@ router.get("/audiomack-ad", async (req, res) => {
     return res.status(500).json({ message: error });
   }
 });
+router.get("/boomplay-ad", async (req, res) => {
+  try {
+    const ads = await BoomAd.find();
+    return res.status(200).json({ ads });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: error });
+  }
+});
+
 router.post("/set-recent/:type", async (req, res) => {
   try {
     const { id, title, artist, image } = req.body;
