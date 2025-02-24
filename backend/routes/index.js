@@ -1,6 +1,11 @@
 const express = require("express");
 const isAuthenticated = require("../middleware/isAuthenticated.js");
-const { AudiomackAd, BoomRecent, AudioRecent } = require("../models/index.js");
+const {
+  AudiomackAd,
+  BoomRecent,
+  AudioRecent,
+  BoomAd,
+} = require("../models/index.js");
 const router = express.Router();
 
 router.use("/auth", require("./auth"));
