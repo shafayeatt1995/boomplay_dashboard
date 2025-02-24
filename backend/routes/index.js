@@ -12,7 +12,7 @@ router.use("/auth", require("./auth"));
 router.get("/audiomack-ad", async (req, res) => {
   try {
     const ads = await AudiomackAd.find();
-    return res.status(200).json({ ads });
+    return res.json(ads);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: error });
@@ -21,7 +21,7 @@ router.get("/audiomack-ad", async (req, res) => {
 router.get("/boomplay-ad", async (req, res) => {
   try {
     const ads = await BoomAd.find();
-    return res.status(200).json({ ads });
+    return res.json(ads);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: error });
