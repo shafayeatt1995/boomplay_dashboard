@@ -6,16 +6,22 @@ const MongoStore = require("connect-mongo");
 const cors = require("cors");
 require("./config/mongo");
 
+app.use(
+  cors({
+    origin: [
+      "https://boomplaydownloader.com",
+      "https://boomplay-downloader.com",
+      "https://audiomacktomp3.com",
+      "https://audiomack-downloader.com",
+      "https://jellyfish-app-u6327.ondigitalocean.app",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+  })
+);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-const corsOptions = {
-  origin: "*",
-  methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type"],
-  credentials: false,
-};
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
