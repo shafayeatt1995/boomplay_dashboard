@@ -67,9 +67,9 @@ router.get("/get-recent/:type", async (req, res) => {
     const { type } = req.params;
     let recent = [];
     if (type === "boomplay") {
-      recent = await BoomRecent.find().sort({ _id: -1 });
+      recent = await BoomRecent.find({}).sort({ _id: -1 });
     } else if (type === "audiomack") {
-      recent = await AudioRecent.find().sort({ _id: -1 });
+      recent = await AudioRecent.find({}).sort({ _id: -1 });
     }
     return { success: true, recent };
   } catch (error) {
