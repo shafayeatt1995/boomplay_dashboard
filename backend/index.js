@@ -3,10 +3,12 @@ const app = express();
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const MongoStore = require("connect-mongo");
+const cors = require("cors");
 require("./config/mongo");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors({ origin: "*", methods: "*" }));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
