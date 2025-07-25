@@ -58,6 +58,7 @@ router.post("/set-recent/:type", async (req, res) => {
     }
     return { success: true };
   } catch (error) {
+    console.error(error);
     return { success: false };
   }
 });
