@@ -72,6 +72,7 @@ router.get("/get-recent/:type", async (req, res) => {
     }
     return { success: true, recent };
   } catch (error) {
+    console.error(error);
     return { success: false };
   }
 });
