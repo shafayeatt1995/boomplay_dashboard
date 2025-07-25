@@ -9,6 +9,7 @@ const {
 const router = express.Router();
 
 router.use("/auth", require("./auth"));
+router.use("/audiomack", require("./audiomack"));
 router.get("/audiomack-ad", async (req, res) => {
   try {
     const ads = await AudiomackAd.find();
