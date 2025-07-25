@@ -9,10 +9,15 @@ require("./config/mongo");
 app.use(
   cors({
     origin: [
+      "https://www.boomplaydownloader.com",
       "https://boomplaydownloader.com",
+      "https://www.boomplay-downloader.com",
       "https://boomplay-downloader.com",
+      "https://www.audiomacktomp3.com",
       "https://audiomacktomp3.com",
+      "https://www.audiomack-downloader.com",
       "https://audiomack-downloader.com",
+      "https://www.jellyfish-app-u6327.ondigitalocean.app",
       "https://jellyfish-app-u6327.ondigitalocean.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
