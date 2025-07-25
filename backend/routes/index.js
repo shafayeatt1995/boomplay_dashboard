@@ -56,10 +56,10 @@ router.post("/set-recent/:type", async (req, res) => {
         }
       }
     }
-    return { success: true };
+    return res.json({ success: true });
   } catch (error) {
     console.error(error);
-    return { success: false };
+    return res.status(500).json({ success: false });
   }
 });
 router.get("/get-recent/:type", async (req, res) => {
@@ -71,10 +71,10 @@ router.get("/get-recent/:type", async (req, res) => {
     } else if (type === "audiomack") {
       recent = await AudioRecent.find({}).sort({ _id: -1 });
     }
-    return { success: true, recent };
+    return res.json({ success: true, recent });
   } catch (error) {
     console.error(error);
-    return { success: false };
+    return res.status(500).json({ success: false });
   }
 });
 
