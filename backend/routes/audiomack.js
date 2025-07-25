@@ -32,3 +32,5 @@ router.post("/get-song-url-by-id", async (req, res, next) => {
   const response = await audiomackDownloader.getSongUrlById(songId);
   res.send(response);
 });
+
+module.exports = router;
